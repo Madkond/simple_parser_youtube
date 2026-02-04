@@ -24,8 +24,8 @@ class Config:
         redis_url = os.getenv("REDIS_URL", "redis://localhost:6379/0").strip()
         redis_fsm_db = int(os.getenv("REDIS_FSM_DB", "1"))
         export_dir = os.getenv("EXPORT_DIR", str(_ROOT / "exports")).strip()
-        rate_limit_seconds = int(os.getenv("RATE_LIMIT_SECONDS", "60"))
-        default_limit = int(os.getenv("DEFAULT_LIMIT", "500"))
+        rate_limit_seconds = int(os.getenv("RATE_LIMIT_SECONDS", "120"))
+        default_limit = int(os.getenv("DEFAULT_LIMIT", "200"))
 
         if not bot_token:
             raise RuntimeError("BOT_TOKEN is required")
